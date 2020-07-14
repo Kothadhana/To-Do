@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ToDo</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js">
+    </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  </head>
+<link rel="stylesheet" href="styles.css">
+</head>
+  <body class="container">
+    <h1>TO-DO list</h1>
+    <div class="list" class="form-group" ng-app="MyApp" ng-controller="MyCtrl">
+
+         <input class="form-control text" type="text"  name=""   ng-click="clearNewItem()" ng-model="newItem" value="" >
+         <button type="submit" ng-click="addItem()" class="form-control  btn btn-primary" name="button">Add Item</button>
+
+         <br>
+
+           <div ng-repeat="item in Items" class="items" >
+             <span><input type="checkbox" class="finished" style="display: inline" ng-model="item.checked" for="finish"/></span>
+             <div class="form-group item" style="display: inline"><span ng-style="{textDecoration: item.checked? 'line-through':'none'}">{{ item.name }}</span></div>
+           </div>
+           <button type="submit" ng-click="removeAllItems()" class="form-control  btn btn-primary" name="button">Clear All Items</button>
+
+        </div>
+   <script type="text/javascript" src="app.js">
+
+   </script>
+  </body>
+</html>
